@@ -92,16 +92,4 @@ function File:Delete() -- Удаляет файл.
     self = nil
 end 
 
-function File:Changed(func) -- Если текст файла изменён то исполняет функцию. (В теории может вызвать лаги из-за большого вызова функции readfile.)
-    local old = readfile(self.Name) 
-    local con;
-    con = game:GetService("RunService").RenderStepped:Connect(function()
-        local new = readfile(self.Name) 
-        if old ~= new then 
-            coroutine.wrap(func)(new)
-            con:Disconnect()
-        end
-    end)
-end
-
 return File
