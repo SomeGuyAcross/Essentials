@@ -3,7 +3,7 @@ local File = {}
 
 File.__index = File 
 
-function File.create(Name,Text)  -- Создаёт новый файл с указанными аргументами.
+function File.new(Name,Text)  -- Создаёт новый файл с указанными аргументами.
     local self = setmetatable({},File) 
     self.Name = Name
     writefile(Name,Text or "")
