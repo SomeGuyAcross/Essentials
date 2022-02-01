@@ -44,3 +44,5 @@ function File:Delete() -- Удаляет файл.
     delfile(self.Name)
     self = nil
 end 
+
+return File
