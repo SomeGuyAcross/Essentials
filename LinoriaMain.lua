@@ -418,7 +418,7 @@ do
         });
 
         local RgbBox = Library:Create(RgbBoxBase.Frame:FindFirstChild('TextBox'), {
-            Text = '255, 255, 255',
+            Text = ' 255, 255, 255',
             PlaceholderText = 'RGB color',
         })
 
@@ -1555,6 +1555,11 @@ do
                 return Dropdown.Value and 1 or 0;
             end;
         end;
+
+        function Dropdown:UpdateChoices(NewValues)
+            Dropdown.Values = NewValues
+            Dropdown:SetValues()
+        end
 
         function Dropdown:SetValues()
             local Values = Dropdown.Values;
