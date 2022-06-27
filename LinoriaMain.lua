@@ -1556,11 +1556,6 @@ do
             end;
         end;
 
-        function Dropdown:UpdateChoices(NewValues)
-            Dropdown.Values = NewValues
-            Dropdown:SetValues()
-        end
-
         function Dropdown:SetValues()
             local Values = Dropdown.Values;
             local Buttons = {};
